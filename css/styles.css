@@ -176,7 +176,7 @@ one above is for mobile*/
 
 }
 
-/*STEP 3 DESIGN LISTS*/
+/*STEP 4 DESIGN LISTS*/
 
 /* for horizontal list (inline)*/
 .list{
@@ -211,4 +211,35 @@ items that has a class of '.list_item'*/
     .list--tick .list__item{
         padding-left: 0;
     }
+}
+
+/*STEP 5 DESIGN ICONS*/
+
+.icon{
+    width: 40px;
+    height: 40px;
+}
+
+/*create separate skin for wordpress icon
+change the color of icons to blue
+*/
+
+.icon--primary{
+    fill:var(--color-primary)
+}
+
+/*icon is inline element,width and height as no effect 
+on inline elements. so need to make it set display
+to  inline-block/flex in order to make a circle 
+icon*/
+
+.icon-container{
+    background: #f3f9fa;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    display: inline-flex; /*use inline-flex, instead of block to centralise the circle*/
+    justify-content: center;/*align horizontal axis*/
+    align-items: center; /*align vertical axis*/
+
 }

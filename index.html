@@ -52,7 +52,6 @@
 		skin from structure in badges, so class can take on badge--primary
 		or badge--small depending on your design-->
 		<span class="badge badge--primary badge--small">10% Off</span>
-<<<<<<< HEAD
 
 		<!--
 			For creating list in the layout 
@@ -60,22 +59,36 @@
 		    - toggle between list--inline to list--tick 
 			- to see the tick or inline list.
 		-->
-			<ul class="list list--tick"> 
-				<!--USE BEM naming convention to separate
+		<ul class="list list--tick">
+			<!--USE BEM naming convention to separate
 				block from element with __. class="list"
 				is block, class="list_item is element of 
 				the block"-->
-				<li class="list__item">Item 1</li>
-				<li class="list__item">Item 2</li>
-				<li class="list__item">Item 3</li>
-			</ul>
-
+			<li class="list__item">Item 1</li>
+			<li class="list__item">Item 2</li>
+			<li class="list__item">Item 3</li>
 		</ul>
-=======
->>>>>>> a43e47895e75cb8c3177cd1cbaf67586cad80cb3
+
+		<!--
+			1. scroll to the bottom of svgsprit.es after download
+			2. copy the svg element to the body html
+		
+			<svg class="icon">
+			<use xlink:href="#wordpress"></use>
+			</svg>
+
+			3. include the file path of sprite.svg to locate
+			wordpress icon "images/sprite.svg#wordpress"
+		-->
+		<span class="icon-container">
+			<!--try remove icon--primary class="icon icon--primary", 
+				to see the flexibility of separating skin from structure-->
+			<svg class="icon icon--primary">
+				<use xlink:href="images/sprite.svg#wordpress"></use>
+			</svg>
+		</span>
 	</body>
 </html>
 
 <!--create a component folder to store HTML
 template design for each component of the webdesign-->
-
