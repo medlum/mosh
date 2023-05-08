@@ -1,0 +1,217 @@
+/* define primary colours to use
+for the layout
+
+-- means global follow by variable name eg.
+--color-primary
+*/
+
+/* 
+STEP 1:
+SET UP TYPOGRAPHY
+USE 'MOBILE FIRST' APPROACH WHEN STYLING
+THEN ADAPT FOR MONITOR SCREEN
+-------
+- global variables for CSS color
+- font size for body headings and para
+- line height in the body
+*/
+
+html{
+    font-size: 62.5%; /*1 rem = 10px when font-size: 62.5%*/
+}
+
+:root{
+
+    --color-primary:#2584ff;
+    --color-secondary: #00d9ff;
+    --color-accent :#ff3400;
+    --color-headings: #1b0760;
+    --color-body: #918ca4;
+
+}
+
+body{
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    color:var(--color-body); /*use the global var of color*/
+}
+
+
+h1, h2, h3{
+    color: var(--color-headings);
+    margin-bottom: 1rem; 
+}
+
+h1{
+    font-size: 7rem; 
+}
+
+h2{
+    font-size: 4rem; /*1 rem = 10px when font-size: 62.5%*/
+}
+
+h3{
+    font-size: 3rem; /*1 rem = 10px when font-size: 62.5%*/
+
+}
+
+p{
+    margin-top: 0;
+}
+
+
+/* 
+AFTER STYLING 'MOBILE FIRST' APPROACH,
+USE MEDIA QUERIES FOR REGULAR MONITOR SCREEN 
+*/
+
+/* standard to use 1024px for min-width */
+@media screen and (min-width: 1024px) {
+    body{
+
+        font-size: 1.8rem;
+    }
+
+    h1{
+        font-size: 8rem;
+    }
+
+    h2{
+        font-size: 4rem;
+    }
+
+    h3{
+        font-size: 2.4rem;
+    }
+    
+}
+
+/* STEP 2:DESIGN THE LINK ELEMENTS */
+
+/* set all links to none*/
+
+a{
+    text-decoration: none;
+}
+
+.link-arrow{
+    color:var(--color-accent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+/*use after pseudo element selector ::after to insert arrow*/
+
+.link-arrow::after{
+    content: '-->';
+    margin-left: 5px;
+    /*include transition on margin for smoother effect.
+    transition can takes transformation or element, in this case
+    it takes 'margin' and give it a smoother transition
+    */
+    transition: margin 0.15s;
+}
+
+/*use after pseudo element selector ::after for hover
+effect on the arrow. left margin will move from 5px to 10px 
+at hover*/
+
+.link-arrow:hover::after{
+    margin-left: 10px;
+}
+
+/* for large screen, set arrow to smaller font size, as the
+one above is for mobile*/
+@media screen and (min-width:1024px) {
+    .link-arrow{
+        font-size: 1.5rem;
+    }
+    
+}
+
+/*STEP 3 DESIGN BADGES*/
+
+.badge{
+    border-radius: 20px; 
+    font-size: 2rem;
+    font-weight: 600;
+    padding:0.5rem 1.5rem 0.5rem 1.5rem; /*top right bottom left/*/
+    white-space: nowrap; /*prevent badge to wrap to newline*/
+}
+
+/*use BEM naming convention: Block Element Modifier
+use -- to sepearate a block or component from a modifier
+in this case, '.badge' is block, modifier is '--primary'
+*/
+
+.badge--primary{
+    background: var(--color-primary); /*set bg to the primary color*/
+    color:#fff;
+
+}
+
+.badge--secondary{
+    background: var(--color-secondary);
+    color: #fff;
+}
+
+/* create a separate skin from structure*/
+.badge--small{
+    font-size: 1.6rem;
+}
+
+/* for large screen, set badge to smaller font size, as the
+one above is for mobile*/
+@media screen and (min-width:1024px) {
+    .badge{
+        font-size: 1.5rem;
+    }
+
+    .badge--small{
+        font-size: 1.2rem;
+    }
+<<<<<<< HEAD
+}
+
+/*STEP 3 DESIGN LISTS*/
+
+/* for horizontal list (inline)*/
+.list{
+    list-style: none;
+    padding-left: 0;
+    color: var(--color-headings);
+}
+
+.list--inline .list__item{
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+
+/* for vertical list (block)*/
+.list--tick{
+    /* to use tick as bullet point*/
+    list-style-image: url(../images/tick.svg);
+    padding-left: 3rem; /*to see the tick as bullet point*/
+}
+
+/* '.list--tick .list__item' is to add 0.5rem padding
+for the 'list-item' of the 'list--tick'; without 'list-tick'
+in front, all '.list__item' will apply 0.5rem paading to all
+items that has a class of '.list_item'*/
+.list--tick .list__item{
+    padding-left: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .list--tick .list__item{
+        padding-left: 0;
+    }
+    
+=======
+>>>>>>> a43e47895e75cb8c3177cd1cbaf67586cad80cb3
+}
