@@ -173,7 +173,7 @@ one above is for mobile*/
     .badge--small{
         font-size: 1.2rem;
     }
-<<<<<<< HEAD
+
 }
 
 /*STEP 3 DESIGN LISTS*/
@@ -211,7 +211,4 @@ items that has a class of '.list_item'*/
     .list--tick .list__item{
         padding-left: 0;
     }
-    
-=======
->>>>>>> a43e47895e75cb8c3177cd1cbaf67586cad80cb3
 }
