@@ -16,6 +16,17 @@ THEN ADAPT FOR MONITOR SCREEN
 - line height in the body
 */
 
+/*universal selector to set box sizing to the border box
+this is for the button as the block element button with
+anchor <a> will be longer width is 100% due to the 
+padding: 2rem 3rem in .btn
+*/
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
 html{
     font-size: 62.5%; /*1 rem = 10px when font-size: 62.5%*/
 }
@@ -229,7 +240,7 @@ change the color of icons to blue
 }
 
 /*icon is inline element,width and height as no effect 
-on inline elements. so need to make it set display
+on inline elements. so need to  set display
 to  inline-block/flex in order to make a circle 
 icon*/
 
@@ -242,4 +253,98 @@ icon*/
     justify-content: center;/*align horizontal axis*/
     align-items: center; /*align vertical axis*/
 
+}
+
+/*STEP 6 DESIGN BUTTONS*/
+
+.btn{
+    border-radius: 40px;
+    border:0;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 2rem 0; /*horizontal and vertical margin: imagine 2rem horizontally is to placed spaces between lines*/
+    padding: 2rem 3rem;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+}
+
+.btn--primary{
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.btn--primary:hover{
+    background: #3a8ffd;
+}
+
+.btn--secondary{
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+
+.btn--secondary:hover{
+    background: #00c8eb;
+}
+
+.btn--accent{
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.btn--accent:hover{
+    background: #ec3000;
+}
+
+
+.btn--outline{
+    background: #fff;
+    color: var(--color-headings);
+    border: 2px solid var(--color-headings);
+}
+
+
+.btn--outline:hover{
+    background: var(--color-headings);/*reverse the color of white and text color*/
+    color: #fff;
+}
+.btn--block{
+    width: 100%;
+    display: inline-block;
+}
+
+
+
+@media screen and (min-width:1024px) {
+    .btn{
+        font-size: 1.5rem;
+    }
+    
+}
+
+/*STEP 7 DESIGN INPUT COMPONENTS*/
+
+.input{
+    border-radius: 30px;
+    border: solid 1px #ccc;
+    color:var(--color-headings);
+    font-size: 2rem;
+    outline: 0; /*remove default border when hover*/
+    padding: 1.5rem 3.5rem;
+}
+
+/*change font size and color of the placeholder
+- use pseudo class selector
+*/
+::placeholder{
+    color: #cdcbd7;
+}
+
+@media screen and (min-width:1024px) {
+
+    .input{
+        font-size: 1.5rem;
+    }
 }
