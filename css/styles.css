@@ -526,3 +526,28 @@ to reduce creating image element in html.
     }
 }
 
+/*STEP 12 DESIGN MEDIA COMPONENTS*/
+/*after HTML setup:
+- lay the text beside the icon using flex
+
+*/
+
+.media{
+    display: flex;
+}
+
+/* there is a 30px margin from inspection of
+the browser at the title.
+set margin-top: 0 to align icon with header */
+.media__title{
+    margin-top: 0;
+    
+}
+
+.media__body{
+    margin: 0 2rem;
+}
+
+.media__image{
+    margin-top: 1rem;
+}
