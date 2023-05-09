@@ -95,17 +95,69 @@
 			>Buy Now
 		</a>
 
-		<!-- 8 input group -->
+		<!-- 8 DESIGN INPUT GROUP -->
 		<div class="input-group">
-			<!-- 7 input components-->
+			<!-- 7 DESIGN INPUT COMPONENT-->
 			<!--move button before input will move button to the
-			right-->
+			right, can also use icon from sprites-->
 			<button class="btn btn--accent">Search</button>
 			<input
 				type="text"
 				class="input"
 				placeholder="Enter domain name here..."
 			/>
+		</div>
+
+		<!--9 DESIGN CARDS-->
+		<div style="width: 30%; padding: 4rem">
+			<!--define a 2nd class card--primary -->
+			<!--define a 3rd class card--secondary -->
+			<div class="card card--secondary">
+				<header class="card__header">Card Title</header>
+				<div class="card__body">
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Itaque,
+					dolor nulla voluptatum corrupti voluptatem illum repudiandae
+					accusantium blanditiis?
+				</div>
+			</div>
+		</div>
+
+		<!--10 DESIGN PLAN-->
+		<div style="width: 30%; padding: 4rem">
+			<!--
+				- wrap card from step 9 with a div class="plan" 
+				- a plan contains a card
+				- create h3 with a class="plan__name"
+				- create span with a class="plan__price"
+				- create span with a class="plan__billing-cycle"
+				- create span with a class="badge badge--secondary badge--small"
+				- create span with a class="plan_description"
+				-c&p list.html into div class="card__body"
+			-->
+			<div class="plan">
+				<div class="card card--secondary">
+					<header class="card__header">
+						<h3 class="plan__name">Entry</h3>
+						<span class="plan__price">$14</span>
+						<span class="plan__billing-cycle">/month</span>
+						<span class="badge badge--secondary badge--small">10% OFF</span>
+						<span class="plan__description">Easy start on the cloud</span>
+					</header>
+					<div class="card__body">
+						<ul class="list list--tick">
+							<!--USE BEM naming convention to separate
+									block from element with __. class="list"
+									is block, class="list_item is element of 
+									the block"-->
+							<li class="list__item">Unlimited Websites</li>
+							<li class="list__item">Unlimited Bandwidth</li>
+							<li class="list__item">100 GB SSD Storage</li>
+							<li class="list__item">3 GB RAM</li>
+						</ul>
+						<button class="btn btn--outline btn--block">Buy</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

@@ -345,7 +345,9 @@ icon*/
 }
 
 /*STEP 8 DESIGN INPUT GROUPS*/
-/*group 'input-group' with button*/
+/*group 'input-group' with button,
+- this will lay an outer border on 
+<button class="btn btn--accent">Search</button>*/
 
 .input-group{
     /*go back to ::root to define global border color to
@@ -368,8 +370,14 @@ icon*/
 
 }
 
-/*use nesting: when an input component is an input group, 
-then the input component should not have a border.
+/*use nesting: (ie.the input component is an input group)
+so that the inner input component:
+<input
+				type="text"
+				class="input"
+				placeholder="Enter domain name here..."
+			/>
+will not have a border. Else there will be 2 borders.
 */
 .input-group .input{
     border: 0;
@@ -389,8 +397,6 @@ inspect the computed layout of btn in browser
     margin: 4px;
 }
 
-
-
 @media screen and (min-width:1024px) {
 
     .input{
@@ -400,3 +406,95 @@ inspect the computed layout of btn in browser
 
 
 
+/*STEP 9 DESIGN CARDS*/
+
+/*the card should be fluid so the width 
+should be based on the container*/
+.card{
+    border-radius: 7px;
+    /*0 offset for horizontal and vertical 
+    20px for shadow, 10px for shadpw spread
+    */
+    box-shadow: 0 0 20px 10px #f3f3f3;   
+    /*so that background color of the header does overflow*/
+    overflow: hidden; 
+}
+
+/*apply padding to the body and card (TAKE NOTE OF COMMA)*/
+.card__header, .card__body{
+    padding: 2rem 3rem;
+}
+
+/*apply primary color to the header inside card secondary class*/
+.card--primary .card__header{
+    background: var(--color-primary);
+    color: white;
+
+}
+
+/*apply secondary color to the header inside card secondary class*/
+.card--secondary .card__header{
+    background: var(--color-secondary);
+    color: white;
+    
+}
+
+/*this brings up the badge background color
+on the STEP 10 DESIGN PLAN, as the badge color is lost
+to the background of card
+*/
+.card--secondary .badge--secondary{
+    background: #02cdf1;
+}
+
+/*STEP 10 DESIGN PLAN*/
+.plan__name{
+    color:#fff;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.4rem;
+}
+
+.plan__price{
+    font-size: 6rem ;
+}
+
+.plan__billing-cycle{
+    font-size: 2.4rem;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-right: 1rem;
+}
+
+.plan__description{
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 300;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    display: block;
+}
+
+/* give spacing and margin to the list inside div class='plan'*/
+.plan .list__item{
+    margin-bottom: 2rem;
+    letter-spacing: 0.05rem;
+}
+
+@media screen and (min-width:1024px) {
+    .plan__name{
+        font-size: 1.4rem;
+    } 
+
+    .plan__price{
+        font-size: 5rem;
+    }
+
+    .plan__billing-cycle{
+        font-size: 1.6rem;
+    }
+    
+    .plan__description{
+        font-size: 1.7rem;
+    }
+}
