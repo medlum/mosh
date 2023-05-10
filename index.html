@@ -219,6 +219,66 @@
 			<div style="height: 100px; background: dodgerblue"></div>
 			<div style="height: 100px; background: tomato"></div>
 		</div>
+
+		<!--STEP 15 DESIGN TESTIMONIAL-->
+		<!--create a card with 1 x 2 grid -->
+		<div class="card testimonial">
+			<div class="grid grid--1x2">
+				<div class="testimonial__img">
+					<img
+						src="images/testimonial.jpg"
+						alt="happy smiling customer"
+					/>
+					<!--add icon from icon.html
+					-WE ADD A NEW CLASS TO <span class="icon-container">
+					SO IT BECOMES  
+					<span class="icon-container .icon-container--accent">-->
+
+					<span class="icon-container icon-container--accent">
+						<svg class="icon icon--small icon--white">
+							<use xlink:href="images/sprite.svg#quotes"></use>
+						</svg>
+					</span>
+				</div>
+
+				<!--add quote from quote.html-->
+				<blockquote class="quote">
+					<p class="quote__text">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ut in aliquid
+						quae. Voluptate totam repellendus explicabo suscipit modi cumque magni
+						consequuntur at sequi ullam, eos nisi, a eum hic!
+					</p>
+							
+					<footer>
+						<div class="media">
+							<div class="media__image">
+								<svg class="icon icon--primary quote_line">
+									<use xlink:href="images/sprite.svg#line"></use>
+								</svg>
+							</div>
+							<div class="media__body">
+								<h3 class="media__title quote__author">John Smith</h3>
+								<p class="quote__organisation">TigerTail Inc</p>
+							</div>
+						</div>
+					</footer>
+			</div>
+		</div>
+
+		<!--STEP 16 DESIGN CALLOUTS-->
+		<!--Design a grid for this callout-->
+		<div class="callout callout--primary">
+			<div class="grid grid--1x2">
+				<div class="callout__content">
+					<h2 class="callout__heading">Ready to Get Started</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores saepe similique ratione ut officiis recusandae, culpa, commodi dolor nihil, sequi praesentium! Tempora labore numquam id distinctio odio sint, autem omnis.</p>
+				</div>
+				<a href="#" class="btn btn--secondary btn--stretched" >Get Started</a>
+			</div>
+			
+		</div>
+
+
 	</body>
 </html>
 

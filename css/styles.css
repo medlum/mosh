@@ -242,6 +242,21 @@ change the color of icons to blue
     fill:var(--color-primary)
 }
 
+/*THIS IS PART OF STEP 15 OF TESTIMONIAL
+FPR THE QUOTATION ICON*/
+.icon--white{
+    fill:#fff
+}
+
+
+/*THIS IS PART OF STEP 15 OF TESTIMONIAL
+FPR THE QUOTATION ICON*/
+
+.icon--small{
+    width: 30x;
+    height: 30px;
+}
+
 /*icon is inline element,width and height as no effect 
 on inline elements. so need to  set display
 to  inline-block/flex in order to make a circle 
@@ -257,6 +272,16 @@ icon*/
     align-items: center; /*align vertical axis*/
 
 }
+
+/*THIS IS PART OF STEP 15 OF TESTIMONIAL
+WE SET A ACCENT COLOR FOR THE ICON USED AT THE TESTIMONIAL
+THEN WE ADD A NEW CLASS TO <span class="icon-container">
+SO IT BECOMES  <span class="icon-container icon-container--accent">*/
+.icon-container--accent{
+    background: var(--color-accent);
+}
+
+
 
 /*STEP 6 DESIGN BUTTONS*/
 
@@ -318,7 +343,13 @@ icon*/
     display: inline-block;
 }
 
+/*THIS IS PART OF STEP 16 DESIGN CALLOUTS
+to give the button on the callout some padding*/
+.btn--stretched{
+    padding-left: 6rem;
+    padding-right: 6rem;
 
+}
 
 @media screen and (min-width:1024px) {
     .btn{
@@ -631,4 +662,111 @@ change to <div class="grid grid--1x3"> to test*/
         grid-template-columns: repeat(3, 1fr);
     }
     
+}
+
+/*STEP 15 DESIGN TESTIMONIAL*/
+
+.testimonial{
+    padding: 3rem;
+}
+
+/*set width:100% so it shares equal width length
+with the 2nd col and also auto resize when the screen
+size changes*/
+
+/*as image is inside 'testimonial__img' container
+use '>' to directly select the img inside the container.
+'.testimonial__img >img' is direct try selector*/
+.testimonial__img > img{
+    width: 100%;
+}
+
+.testimonial__img{
+    position: relative;
+}
+
+/*set icon to abs position to set it at the top right
+side of the testimonial image*/
+
+/*64 divide 2 = 32, due the icon.container width and height in step 5
+-32px will place the icon 50:50 between the img*/
+.testimonial__img > .icon-container{
+    position: absolute;
+    top: 3rem;
+    right: -32px; 
+}
+
+/*define a new media query for testimonial as the font 
+size seem too big for tablet screen (768px is standard for 
+tablet screen)*/
+
+/* .testimonial .quote { } means we target the quote of the testimonial
+class
+
+.testimonial .quote,
+.testimonial .quote__author {} means we target 2 specific element
+
+*/
+@media screen and (min-width:768px) {
+    .testimonial .quote,
+    .testimonial .quote__author{
+        font-size: 2.4rem;
+    }
+    /*target quote inside testimonial class
+    to give a left margin for text and image to
+    have a wider gap*/
+    .testimonial .quote{
+        margin-left: 6rem;
+    }
+}
+
+/*STEP 16 DESIGN CALLOUTS*/
+
+.callout{
+    padding: 4rem;
+    border-radius: 5px;
+}
+
+.callout--primary{
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.callout__heading{
+    color: #fff;
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+/*default value for justify-contents and align-items
+is 'stretch'*/
+.callout .btn{
+    justify-self: center; /*justify-self apply to the item of a grid*/
+    align-self: center; /*align-self apply to the item of a grid*/
+    
+}
+
+/*on mobile, the text of callout will be center*/
+.callout__content{
+    text-align: center;
+}
+
+/*set text conten to left when using tablet and above*/
+@media screen and (min-width:768px) {
+
+    /*this allow the text and button to adjust empty
+    spaces more evenly, else there are alot of empty 
+    space on button grid. the text will stretch accordingly*/
+    .callout .grid--1x2{
+        grid-template-columns: 1fr auto;
+    }
+
+    .callout__content{
+        text-align: left;
+    }
+    /*so that button is closer to the text*/
+    .btn{
+        justify-self: start;
+        margin:2rem;
+    }
 }
