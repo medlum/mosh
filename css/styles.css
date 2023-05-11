@@ -770,3 +770,72 @@ is 'stretch'*/
         margin:2rem;
     }
 }
+
+
+/*STEP 17 DESIGN COLLAPSIBLE*/
+.collapsible__header{
+    display: flex;
+    /*
+    put chevron icon to the right by
+    - push space to the edges and add ppace between them
+    */
+    justify-content: space-between;
+
+}
+
+/*to remove the margin go <h2> item 1*/
+.collapsible__heading{
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+/*rotate chevron icon 90degree*/
+.collapsible__chevron{
+    transform: rotate(-90deg);
+    transition: transform 0.3s;
+}
+
+/*hide the content
+set max-height to zero, this will lead to overflow
+set overflow to hidden, this will hide text at initial
+state
+
+*/
+.collapsible__content{
+    max-height: 0;
+    overflow: hidden;
+    /*
+    'transition : all' will set all settings
+    in this case, opacity and max-height
+    use opacity for better transition, need to 
+    set opacity:1 at:
+
+    .collapsible--expanded .collapsible__content{}
+}
+
+    */
+    transition: all 0.3s;
+    opacity: 0;
+}
+/*
+- create a another class collapsible--expanded in
+<div class="collapsible collapsible--expanded">
+- rotate chevron when the content is expanded
+*/
+
+.collapsible--expanded .collapsible__chevron{
+    transform: rotate(0deg);
+
+}
+
+/*
+text will expand upon click from js,
+set max-height to 100vh to make the view area fluid.
+
+*/
+.collapsible--expanded .collapsible__content{
+    max-height: 100vh;
+    opacity: 1;
+}
+
+/*use js to script the expand and collapse state*/
