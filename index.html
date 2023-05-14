@@ -309,6 +309,36 @@
 				Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, hic!
 			</div>
 		</div>
+
+
+		<!--STEP 18 DESIGN BLOCK-->
+		<!--Use section element to represent a block-->
+		<!--include container class to constrain resizing-->
+		<section class="block container">
+			<!--create a header for h2 and p so that
+			when we aligh text to center, only this part is applied-->
+			<header class="block__header">
+				<h2 class="block__heading">Heading</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi hic molestiae aut sit non eaque consequuntur quia nisi tenetur? Natus!</p>
+			</header>
+		</section>
+
+		<section class="block block--dark block--skew-left">
+			<!-- we dont want to constrain the 'section' of dark block,
+			with container class, so we wrap the h2 and p with another
+			<div class = 'container' so that only text is constrain, not the dark area
+			-->
+			<div class="container">
+				<h2 class="block__heading">Heading</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi hic molestiae aut sit non eaque consequuntur quia nisi tenetur? Natus!</p>
+			</div>
+
+		</section>
+
+		<!--STEP 19 DESIGN NAVIGATION BAR-->
+
+
+
 		<script src="js/main.js"></script>
 	</body>
 </html>

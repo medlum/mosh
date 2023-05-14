@@ -51,6 +51,17 @@ body{
     color:var(--color-body); /*use the global var of color*/
 }
 
+/* container is for STEP18 DESIGN BLOCK
+
+add a constrain to avoid re-sizing
+use margin: 0 and auto, so that the design block can take up all space on
+left and auto fill to right. 
+0: vertical margin and auto: horizontal */
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
 
 h1, h2, h3{
     color: var(--color-headings);
@@ -839,3 +850,66 @@ set max-height to 100vh to make the view area fluid.
 }
 
 /*use js to script the expand and collapse state*/
+
+/*STEP 18 DESIGN BLOCK*/
+
+.block{
+    /*custom property variable. this allow the reuse of the 
+    property more dynamically, example reuse it at .block--skew-right */
+    --padding-vertical: 6rem; 
+    
+    /*normal padding versus custom property variable
+    padding: 6rem 2rem;
+    */
+
+    padding: var(--padding-vertical) 2rem;
+    /*temporary property to see how the section flow*/
+    /*border: solid 2px red; */
+ 
+}
+
+.block__header{
+    text-align: center;
+}
+
+/*remove heading extra margin*/
+.block__heading{
+    margin-top: 0;
+}
+
+.block--dark{
+    background: #000;
+    color: #7b858b;
+}
+
+/*give the heading inside dark block a white header*/
+.block--dark .block__heading{
+    color: #fff;
+}
+
+
+.block--skew-right{
+    /*padding gives more area between this and next section
+    use calc() to add another 4 rem dynamically. as compared to
+    hardcoding 'padding-bottom: 10rem');
+    */
+    
+    padding-bottom: calc(var(--padding-vertical) + 4rem); 
+    
+    /*go to https://bennettfeely.com/clippy/ to create
+a polygon
+- select custom polygon and choose the 4 corners 
+- copy and paste the clip path 
+- apply it to the block--dark class
+*/
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+}
+
+
+
+.block--skew-left{
+   
+    padding-bottom: calc(var(--padding-vertical) + 4rem); 
+    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+
