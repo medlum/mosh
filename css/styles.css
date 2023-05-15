@@ -906,10 +906,103 @@ a polygon
 }
 
 
-
 .block--skew-left{
    
     padding-bottom: calc(var(--padding-vertical) + 4rem); 
     clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
 }
 
+.nav{
+    background: #000;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+     /*create a padding not so close to the edges
+     at the */
+    padding:0 1rem; /*top-right*/
+    align-items: center;/*menu button set to center*/
+}
+
+/*push the list below the icon
+set width to 100% and enable flex-wrap in .nav*/
+.nav__list{
+    width: 100%;  
+    margin: 0; 
+}
+
+.nav__item{
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #222;
+}
+
+/*need direct child selector for <a>
+cannot just include color in .nav__item*/
+.nav__item > a{
+    color: #d2d0db;
+    transition: 0.3s;
+}
+
+
+.nav__item > a:hover{
+    color: #fff;
+}
+
+/*create an extra class nav__toggler for hover effect on the button*/
+.nav__toggler{
+    opacity: 0.2;
+    /*this is meant for the button to transit more smoothly
+    when the button is expanded unger double class selector
+    below
+    */
+    transition: 0.15s;
+    cursor: pointer;
+
+}
+
+.nav__toggler:hover{
+    color: #fff;
+
+}
+
+
+/*use a double class selector*/
+/*this will set opacity of the button back to 
+value of 1 when the list is expanded, 
+so it looks brighter and apply box shadow too */
+.nav.collapsible--expanded .nav__toggler{
+    opacity: 1;
+    box-shadow: 0 0 0 3px #666;
+    border-radius: 5px;
+}
+
+/*a small hack to move the logo down, add a 
+new class="nav__brand" in html under the anchor*/
+.nav__brand{
+    transform: translateY(8px);
+
+}
+
+
+
+/*for wide screen*/
+
+@media screen and (min-width:768px) {
+     /*don't display icon on larger screen*/
+    .nav__toggler{
+        display: none;
+
+    }
+    
+    .nav__list{
+        width: auto;
+        display: flex; /*put the list horizontally*/
+        font-size: 1.6rem;
+        max-height: 100%;
+        opacity: 1;
+
+    }
+    /*remove the border at wide screen*/
+    .nav__item{
+        border: 0;
+    }
+}

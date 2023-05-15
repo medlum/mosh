@@ -336,6 +336,34 @@
 		</section>
 
 		<!--STEP 19 DESIGN NAVIGATION BAR-->
+		<!--
+			1. Need 3 elements:img, button and list
+			2. create extra class 'collapsible' and 'collapsible--expanded'
+		-->
+		<nav class="nav collapsible collapsible--expanded">
+			<!--
+				a small hack to move the logo down, add a 
+new class="nav__brand" in html under the anchor
+			-->
+			<a class="nav__brand" href="/"><img src="images/logo.svg" alt=""></a>
+			<!--c&p icon from icon.html, change to icon--white
+			- create an extra class 'nav__toggler' for hover effect
+			- list should remain hidden until button is clicked
+			-->
+
+			<svg class="icon icon--white nav__toggler ">
+				<use xlink:href="images/sprite.svg#menu"></use>
+			</svg>
+			<!--3 unordered list-->
+			<!--push the list below the icon when in mobile,
+			create a sub-class 'nav__list'-->
+			<ul class="list nav__list collapsible__content">
+				<li class="nav__item"><a href="#">Hosting</a></li>
+				<li class="nav__item"><a href="#">VPS</a></li>
+				<li class="nav__item"><a href="#">Domain</a></li>
+				<li class="nav__item"><a href="#">Pricing</a></li>
+			</ul>
+		</nav>
 
 
 
