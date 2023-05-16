@@ -312,6 +312,21 @@ SO IT BECOMES  <span class="icon-container icon-container--accent">*/
 
 }
 
+/*for icon in the search button
+refer to step 21 DESIGN DOMAIN BLOCK under 
+<button class="btn btn--accent">
+				<svg class="icon icon--white">
+					<use xlink:href="images/sprite.svg#search"></use>
+				</svg>
+				Search
+			</button>
+*/
+.btn .icon{
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem;
+    vertical-align: middle;
+}
 .btn--primary{
     background: var(--color-primary);
     color: #fff;
@@ -431,7 +446,7 @@ will not have a border. Else there will be 2 borders.
     /*inspect computed layout of input text in browser,
     there is a 43.75 padding space between button and input
     text, using padding to reduce space */
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2rem;
  
 }
 
@@ -1044,3 +1059,33 @@ in a browser*/
       padding-top: 0;
     }
   }
+
+
+  /* STEP 21 DESIGN DOMAIN BLOCK*/
+
+
+.block-domain .input-group{
+    box-shadow: 0 0 30px 20px #e6ebee;
+    border: 0;
+    margin: 4rem auto;
+    max-width: 600px;
+}
+
+
+.block-domain__prices{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 6rem);
+    font-size: 2rem;
+    font-weight: 600;
+    justify-items: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:768px) {
+    
+    .block-domain__prices{
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    }
+}
