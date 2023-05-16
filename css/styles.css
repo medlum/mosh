@@ -507,7 +507,16 @@ to the background of card
     background: #02cdf1;
 }
 
+
+.card--primary .badge--primary{
+    background: #126de4;
+}
 /*STEP 10 DESIGN PLAN*/
+
+.plan{
+    transition: transform .2s ease-out;
+}
+
 .plan__name{
     color:#fff;
     margin: 0;
@@ -553,6 +562,10 @@ to reduce creating image element in html.
 - put card__header (the parent) to position: relative 
 */
 
+.plan--popular {
+    transform: scale(1.1);
+}
+
 .plan--popular .card__header{
     position: relative;
 }
@@ -566,6 +579,15 @@ to reduce creating image element in html.
     right:5%;/*offset the badge to right*/
 }
 
+
+.plan:hover{
+    transform: scale(1.05);
+
+}
+
+.plan--popular:hover{
+    transform: scale(1.15);
+}
 
 
 @media screen and (min-width:1024px) {
@@ -1088,4 +1110,16 @@ in a browser*/
     .block-domain__prices{
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
     }
+}
+
+
+/*STEP 22 DESIGN PLAN BLOCK-*/
+.block-plans .grid{
+    gap: 8rem 4rem; /*8rem horizontally and 4 rem vertically */
+
+}
+
+.block-plans .card{
+    max-width: 500px;
+    margin: 0 auto;
 }
