@@ -27,6 +27,10 @@ padding: 2rem 3rem in .btn
     box-sizing: border-box;
 }
 
+::selection{
+    background: var(--color-primary);
+    color: #fff;
+}
 html{
     font-size: 62.5%; /*1 rem = 10px when font-size: 62.5%*/
 }
@@ -209,7 +213,7 @@ one above is for mobile*/
 .list{
     list-style: none;
     padding-left: 0;
-    color: var(--color-headings);
+    
 }
 
 .list--inline .list__item{
@@ -223,6 +227,7 @@ one above is for mobile*/
     /* to use tick as bullet point*/
     list-style-image: url(../images/tick.svg);
     padding-left: 3rem; /*to see the tick as bullet point*/
+    color: var(--color-headings);
 }
 
 /* '.list--tick .list__item' is to add 0.5rem padding
@@ -616,6 +621,7 @@ to reduce creating image element in html.
 
 .media{
     display: flex;
+    margin-bottom: 4rem;
 }
 
 /* there is a 30px margin from inspection of
@@ -926,6 +932,20 @@ set max-height to 100vh to make the view area fluid.
     color: #fff;
 }
 
+/*possible to replace .blocking__heading
+with h1,h2,h3 etc so that so long as 
+it is block--dark, then the heading with
+change to white
+
+.block--dark h1,
+.block--dark h2,
+.block--dark h3,
+{
+    color: #fff;
+}
+
+*/
+
 
 .block--skew-right{
     /*padding gives more area between this and next section
@@ -941,14 +961,14 @@ a polygon
 - copy and paste the clip path 
 - apply it to the block--dark class
 */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
 }
 
 
 .block--skew-left{
    
     padding-bottom: calc(var(--padding-vertical) + 4rem); 
-    clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
 }
 
 .nav{
@@ -1150,3 +1170,37 @@ in a browser*/
 }
     
 
+/*STEP 24 SHOWCASE BLOCK*/
+
+/*use width:100% to make image responsive to
+changes in screensize*/
+.block-showcase__image > img{
+    width: 100%;
+}
+
+
+.block-showcase .media__title{
+    color: #fff;
+}
+
+.block-showcase .icon{
+    color: #fff;
+}
+
+
+@media screen and (min-width:768px) {
+    .block-showcase .grid{
+        grid-template-columns: 50% 50%;
+    }
+
+    .block-showcase__image{
+        justify-self: end;
+    }
+
+    .block-showcase__image > img {
+        width: auto;
+        max-width: 700px;
+    }
+
+   
+}
